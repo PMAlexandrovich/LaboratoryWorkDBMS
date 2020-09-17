@@ -123,7 +123,7 @@ namespace FamilyBudget
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date  FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id";
+            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id";
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
         }
@@ -150,11 +150,10 @@ namespace FamilyBudget
         }
         private void Button8_Click(object sender, EventArgs e)
         {
-            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE I.Date LIKE '[К-Р%]'";
+            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE FM.Name LIKE '[К-Р]%'";
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
         }
-
         private void Button9_Click(object sender, EventArgs e)
         {
             sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE I.Id IN (1, 3, 5)";
@@ -175,13 +174,12 @@ namespace FamilyBudget
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
         }
-
+        //не работает
         private void TextBox8_TextChanged(object sender, EventArgs e)
         {
             bs.Filter = filterField + " LIKE '" + textBox1.Text + "%'";
         }
-
-        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void Button12_Click(object sender, EventArgs e)
         {
             filterField = "Name";
             bs.Filter = filterField + " LIKE '" + textBox1.Text + "%'";

@@ -52,18 +52,18 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button12 = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -72,8 +72,8 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -346,6 +346,57 @@
             this.tabPage2.Text = "Лабораторная 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button12);
+            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Location = new System.Drawing.Point(782, 80);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(254, 105);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Фильтрация";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(7, 21);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(167, 22);
+            this.textBox8.TabIndex = 0;
+            this.textBox8.TextChanged += new System.EventHandler(this.TextBox8_TextChanged);
+            // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button11.Location = new System.Drawing.Point(266, 593);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(252, 63);
+            this.button11.TabIndex = 8;
+            this.button11.Text = "Показать людей не с номером 1, 3, 5";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(266, 490);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(252, 90);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "Показать у кого дата получения зарплаты между 5.01 и 10.01";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Location = new System.Drawing.Point(266, 412);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(252, 63);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "Показать людей с номером Id 1, 3, 5";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -356,6 +407,17 @@
             this.button8.Text = "Показать имена от К-Р";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(8, 593);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(252, 63);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Показать у кого доход 5000";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button6
             // 
@@ -399,78 +461,16 @@
             this.dataGridView4.Size = new System.Drawing.Size(751, 336);
             this.dataGridView4.TabIndex = 0;
             // 
-            // button9
+            // button12
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(266, 412);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(252, 63);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Показать людей с номером Id 1, 3, 5";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(266, 490);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(252, 90);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "Показать у кого дата получения зарплаты между 5.01 и 10.01";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.Button10_Click);
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(8, 593);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(252, 63);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Показать у кого доход 5000";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button11.Location = new System.Drawing.Point(266, 593);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(252, 63);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "Показать людей не с номером 1, 3, 5";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.Button11_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Location = new System.Drawing.Point(782, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 105);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Фильтрация";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(7, 21);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(167, 22);
-            this.textBox8.TabIndex = 0;
-            this.textBox8.TextChanged += new System.EventHandler(this.TextBox8_TextChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 60);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(92, 21);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.Text = "По имени";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button12.Location = new System.Drawing.Point(7, 49);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(167, 40);
+            this.button12.TabIndex = 1;
+            this.button12.Text = "Произвести";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
             // Form1
             // 
@@ -490,9 +490,9 @@
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,7 +534,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button12;
     }
 }
 
