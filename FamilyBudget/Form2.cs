@@ -71,5 +71,40 @@ namespace FamilyBudget
             dataAdapter.Fill(ExpensesTable);
             dataGridView2.DataSource = ExpensesTable;
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Выбор текущей записи
+            DataGridViewRow curRow = dataGridView1.CurrentRow;
+            textBox1.Text = curRow.Cells["Amount"].Value.ToString();
+            textBox2.Text = curRow.Cells["Date"].Value.ToString();
+
+            // Выбор текущей ячейки
+            DataGridViewCell curCell = dataGridView1.CurrentCell;
+            textBox3.Text = curCell.Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bs.MoveNext();
+            textBox4.Text = bs.Position.ToString();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bs.MovePrevious();
+            textBox4.Text = bs.Position.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bs.Position = int.Parse(textBox4.Text);
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dataRow = (DataRowView)bs.Current;
+            textBox4.Text = dataRow["Amount"].ToString();
+            textBox5.Text = dataRow["Date"].ToString();
+        }
     }
 }
