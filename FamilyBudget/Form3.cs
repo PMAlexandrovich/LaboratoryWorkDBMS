@@ -19,6 +19,9 @@ namespace FamilyBudget
         SqlCommand sqlCommand;
         SqlDataAdapter sqlDataAdapter;
         DataTable Incomes;
+        BindingSource bs;
+
+        string filterField = "Name";
 
         public Form3()
         {
@@ -33,6 +36,9 @@ namespace FamilyBudget
             Incomes = new DataTable();
             sqlDataAdapter.Fill(Incomes);
             dataGridView1.DataSource = Incomes;
+
+            bs = new BindingSource();
+            bs.DataSource = Incomes;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,6 +121,18 @@ namespace FamilyBudget
             sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE (I.Amount IS NOT NULL AND I.Amount = 15000)";
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            bs.Filter = filterField + " LIKE '" + textBox1.Text + "%'";
+        }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            filterField = "Name";
+            bs.Filter = filterField + " LIKE '" + textBox1.Text + "%'";
+            textBox1.Focus();
         }
     }
 }
