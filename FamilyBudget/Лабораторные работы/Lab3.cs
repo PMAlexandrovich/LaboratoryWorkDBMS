@@ -14,8 +14,10 @@ namespace FamilyBudget.Лабораторные_работы
     public partial class Lab3 : Form
     {
         SqlDataAdapter dataAdapter;
+        SqlDataAdapter secondAdapter;
 
         DataTable Incomes;
+        DataTable Members;
 
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FamilyDbN;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -23,10 +25,10 @@ namespace FamilyBudget.Лабораторные_работы
         {
             InitializeComponent();
 
-            ConnectToTypeExpense();
+            Connect();
         }
 
-        private void ConnectToTypeExpense()
+        private void Connect()
         {
             string ComString = "SELECT I.Id, I.Amount, I.Date, FM.Id As FamMamId, FM.Name  FROM Incomes AS I JOIN FamilyMembers As FM ON I.Earned = FM.Id";
 
@@ -35,6 +37,18 @@ namespace FamilyBudget.Лабораторные_работы
             Incomes = new DataTable();
             dataAdapter.Fill(Incomes);
             dataGridView1.DataSource = Incomes;
+
+
+
+            string strCmd = "SELECT * FROM FamilyMembers";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            var comm = new SqlCommand(strCmd, sqlConnection);
+            secondAdapter = new SqlDataAdapter(comm);
+            Members = new DataTable();
+            secondAdapter.Fill(Members);
+            dataGridView2.DataSource = Members;
+            SqlCommandBuilder builder = new SqlCommandBuilder(secondAdapter);
+
         }
 
         //Insert
@@ -172,6 +186,26 @@ namespace FamilyBudget.Лабораторные_работы
                 dataAdapter.Fill(Incomes);
                 conn.Close();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            int i = 0;
+            string str;
+            foreach (DataRow person in Members.Rows)
+            {
+                i = i + 1;
+                str = i.ToString() + ": ";
+                str = str + person.RowState.ToString();
+                listBox1.Items.Add(str);
+            }
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            secondAdapter.Update(Members);
         }
     }
 }
