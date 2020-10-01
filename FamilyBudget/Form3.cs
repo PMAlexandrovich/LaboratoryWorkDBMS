@@ -92,13 +92,27 @@ namespace FamilyBudget
   
         private void button9_Click(object sender, EventArgs e)
         {
-            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE (I.Amount IS NOT NULL AND I.Amount > 5000)";
+            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE (I.Amount IS NOT NULL AND I.Amount < 20000)";
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
         }
         private void button10_Click(object sender, EventArgs e)
         {
             sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE I.Amount = 5000";
+            Incomes.Clear();
+            sqlDataAdapter.Fill(Incomes);
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE (I.Date BETWEEN '01.01.2020' AND '01.15.2020' AND I.Amount > 10000)";
+            Incomes.Clear();
+            sqlDataAdapter.Fill(Incomes);
+        }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            sqlCommand.CommandText = "SELECT I.Id, FM.Name, I.Amount, I.Date, I.Amount*0.87 AS AmountWithPercent FROM Incomes AS I JOIN FamilyMembers AS FM ON I.Earned = FM.Id WHERE (I.Amount IS NOT NULL AND I.Amount = 15000)";
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
         }
