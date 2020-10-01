@@ -175,17 +175,6 @@ namespace FamilyBudget
             Incomes.Clear();
             sqlDataAdapter.Fill(Incomes);
         }
-        //не работает
-        private void TextBox8_TextChanged(object sender, EventArgs e)
-        {
-            bs.Filter = filterField + " LIKE '" + textBox1.Text + "%'";
-        }
-        private void Button12_Click(object sender, EventArgs e)
-        {
-            filterField = "Name";
-            bs.Filter = filterField + " LIKE '" + textBox1.Text + "%'";
-            textBox8.Focus();
-        }
 
         private void button13_Click(object sender, EventArgs e)
         {
