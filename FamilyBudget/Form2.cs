@@ -19,7 +19,7 @@ namespace FamilyBudget
         SqlCommand sqlCommand;
         SqlDataAdapter sqlDataAdapter;
         DataTable Expenses;
-        //DataTable Incomes;
+        
 
         BindingSource bs;
 
