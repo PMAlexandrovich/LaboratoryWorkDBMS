@@ -20,7 +20,6 @@ namespace FamilyBudget
         SqlDataAdapter sqlDataAdapter;
         DataTable Expenses;
         
-
         BindingSource bs;
 
         public Form2()
@@ -87,20 +86,20 @@ namespace FamilyBudget
         private void button1_Click(object sender, EventArgs e)
         {
             bs.MoveNext();
-            textBox4.Text = bs.Position.ToString();
+            textBox7.Text = bs.Position.ToString();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             bs.MovePrevious();
-            textBox4.Text = bs.Position.ToString();
+            textBox7.Text = bs.Position.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bs.Position = int.Parse(textBox4.Text);
+            bs.Position = int.Parse(textBox7.Text);
         }
 
-        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView3_CellClick(object sender, EventArgs e)
         {
             var dataRow = (DataRowView)bs.Current;
             textBox4.Text = dataRow["Amount"].ToString();
