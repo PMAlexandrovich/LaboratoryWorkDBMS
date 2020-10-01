@@ -13,13 +13,13 @@ namespace FamilyBudget
 {
     public partial class Form2 : Form
     {
-        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FamilyDbN;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Family;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         SqlConnection sqlConnection;
         SqlCommand sqlCommand;
         SqlDataAdapter sqlDataAdapter;
         DataTable Expenses;
-        DataTable Incomes;
+        //DataTable Incomes;
 
         BindingSource bs;
 
@@ -47,7 +47,7 @@ namespace FamilyBudget
             }
 
             Sr = Sum / Expenses.Rows.Count;
-            textBox5.Text = Convert.ToString(Sr);
+            textBox6.Text = Convert.ToString(Sr);
 
             //Третий способ
             string ComString = "SELECT I.Id, FM.Name, I.Amount, I.Date  FROM Incomes AS I JOIN FamilyMembers As FM ON I.Earned = FM.Id";
