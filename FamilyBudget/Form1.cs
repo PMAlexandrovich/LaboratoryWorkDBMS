@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FamilyBudget.Лабораторные_работы;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -112,6 +113,12 @@ namespace FamilyBudget
         {
             Form2 form2 = new Form2();
             form2.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Lab3 lab3 = new Lab3();
+            lab3.Show();
         }
     }
 }
