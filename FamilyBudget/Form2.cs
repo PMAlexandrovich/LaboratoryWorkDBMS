@@ -13,14 +13,13 @@ namespace FamilyBudget
 {
     public partial class Form2 : Form
     {
-        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FamilyDbN;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Family;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         SqlConnection sqlConnection;
         SqlCommand sqlCommand;
         SqlDataAdapter sqlDataAdapter;
         DataTable Expenses;
-        DataTable Incomes;
-
+        
         BindingSource bs;
 
         public Form2()
@@ -47,7 +46,7 @@ namespace FamilyBudget
             }
 
             Sr = Sum / Expenses.Rows.Count;
-            textBox5.Text = Convert.ToString(Sr);
+            textBox6.Text = Convert.ToString(Sr);
 
             //Третий способ
             string ComString = "SELECT I.Id, FM.Name, I.Amount, I.Date  FROM Incomes AS I JOIN FamilyMembers As FM ON I.Earned = FM.Id";
@@ -87,20 +86,20 @@ namespace FamilyBudget
         private void button1_Click(object sender, EventArgs e)
         {
             bs.MoveNext();
-            textBox4.Text = bs.Position.ToString();
+            textBox7.Text = bs.Position.ToString();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             bs.MovePrevious();
-            textBox4.Text = bs.Position.ToString();
+            textBox7.Text = bs.Position.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bs.Position = int.Parse(textBox4.Text);
+            bs.Position = int.Parse(textBox7.Text);
         }
 
-        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView3_CellClick(object sender, EventArgs e)
         {
             var dataRow = (DataRowView)bs.Current;
             textBox4.Text = dataRow["Amount"].ToString();
