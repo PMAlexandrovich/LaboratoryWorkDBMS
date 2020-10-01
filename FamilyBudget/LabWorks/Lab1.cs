@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FamilyBudget
 {
-    public partial class Form2 : Form
+    public partial class Lab1 : Form
     {
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FamilyDbN;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -22,7 +22,7 @@ namespace FamilyBudget
         
         BindingSource bs;
 
-        public Form2()
+        public Lab1()
         {
             InitializeComponent();
             //Первый способ

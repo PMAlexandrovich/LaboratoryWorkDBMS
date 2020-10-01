@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FamilyBudget.Лабораторные_работы
+namespace FamilyBudget
 {
     public partial class Lab3 : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace FamilyBudget.Лабораторные_работы
+﻿namespace FamilyBudget
 {
     partial class Lab3
     {
@@ -174,7 +174,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Lab3";
-            this.Text = "Lab3";
+            this.Text = "Лабораторная работа 3";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

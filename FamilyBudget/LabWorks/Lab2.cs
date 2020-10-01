@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace FamilyBudget
 {
-    public partial class Form3 : Form
+    public partial class Lab2 : Form
     {
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FamilyDbN;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -23,7 +23,7 @@ namespace FamilyBudget
 
         string filterField = "Name";
 
-        public Form3()
+        public Lab2()
         {
             InitializeComponent();
             //Добавление таблицы

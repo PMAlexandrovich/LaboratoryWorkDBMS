@@ -1,4 +1,4 @@
-﻿namespace FamilyBudget.Лабораторные_работы
+﻿namespace FamilyBudget
 {
     partial class EditForm
     {
@@ -132,7 +132,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
             this.Name = "EditForm";
-            this.Text = "AddEditForm";
+            this.Text = "Изменить данные";
             this.ResumeLayout(false);
             this.PerformLayout();
 
