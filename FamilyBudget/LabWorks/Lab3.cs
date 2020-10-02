@@ -85,7 +85,7 @@ namespace FamilyBudget
             editForm.ShowDialog(this);
 
             editForm.Dispose();
-            string editStr = $"UPDATE Incomes SET Amount = {editForm.Amount}, Date = '{editForm.Date.ToString("yyyy-MM-ddTHH:mm:ss")}', Earned = {editForm.FamMamberId} WHERE Id = {editForm.Id}";
+            string editStr = $"UPDATE Incomes SET Amount = {editForm.Amount}, Date = '{editForm.Date.ToString("yyyyMMdd")}', Earned = {editForm.FamMamberId} WHERE Id = {editForm.Id}";
             MessageBox.Show(editStr);
             using (var conn = new SqlConnection(connectionString))
             {

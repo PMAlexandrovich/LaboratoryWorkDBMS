@@ -41,7 +41,7 @@ namespace FamilyBudget
 
             Amount = double.Parse(textBox1.Text);
             FamMamberId = (int)comboBox1.SelectedValue;
-            Date = dateTimePicker1.Value.ToUniversalTime();
+            Date = dateTimePicker1.Value;
 
             Close();
         }
